@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pickup-campers/static/css/main.efb01b15.css",
+    "main.js": "/pickup-campers/static/js/main.edb98593.js",
+    "index.html": "/pickup-campers/index.html",
+    "main.efb01b15.css.map": "/pickup-campers/static/css/main.efb01b15.css.map",
+    "main.edb98593.js.map": "/pickup-campers/static/js/main.edb98593.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.efb01b15.css",
+    "static/js/main.edb98593.js"
+  ]
+}

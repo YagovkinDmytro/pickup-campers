@@ -1,0 +1,21 @@
+.card {
+  display: flex;
+  padding: 24px;
+  gap: 24px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 20px;
+  padding: 24px;
+  width: 888px;
+  height: 358px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 526px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+}

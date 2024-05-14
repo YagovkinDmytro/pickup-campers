@@ -1,9 +1,11 @@
 import Button from 'components/Button/Button';
+import CardItem from 'components/CardItem/CardItem';
 
 const App = () => {
   return (
     <>
       <div>Whereas disregard and contempt for human rights have resulted</div>
+      <CardItem></CardItem>
       <Button type="button" variant="button-search">
         Search
       </Button>

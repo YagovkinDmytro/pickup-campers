@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/pickup-campers/static/css/main.bb209bfc.css",
-    "main.js": "/pickup-campers/static/js/main.62dc3a3e.js",
+    "main.css": "/pickup-campers/static/css/main.8a9dcdda.css",
+    "main.js": "/pickup-campers/static/js/main.e5e3ad5d.js",
     "index.html": "/pickup-campers/index.html",
-    "main.bb209bfc.css.map": "/pickup-campers/static/css/main.bb209bfc.css.map",
-    "main.62dc3a3e.js.map": "/pickup-campers/static/js/main.62dc3a3e.js.map"
+    "main.8a9dcdda.css.map": "/pickup-campers/static/css/main.8a9dcdda.css.map",
+    "main.e5e3ad5d.js.map": "/pickup-campers/static/js/main.e5e3ad5d.js.map"
   },
   "entrypoints": [
-    "static/css/main.bb209bfc.css",
-    "static/js/main.62dc3a3e.js"
+    "static/css/main.8a9dcdda.css",
+    "static/js/main.e5e3ad5d.js"
   ]
 }

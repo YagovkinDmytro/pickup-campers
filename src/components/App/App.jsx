@@ -1,5 +1,7 @@
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div>Whereas disregard and contempt for human rights have resulted</div>
+  );
 };
 
 export default App;

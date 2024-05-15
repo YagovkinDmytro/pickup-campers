@@ -4,9 +4,13 @@
   gap: 24px;
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 20px;
-  padding: 24px;
-  width: 888px;
-  height: 358px;
+  width: 840px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .info {
@@ -14,8 +18,67 @@
   flex-direction: column;
   width: 526px;
 }
+.card-picture {
+  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
+}
 
 .title {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.favorite {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.thumb-star-location {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.star {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 24px;
+  line-height: 150%;
+  color: #475467;
+}
+
+.categories-list {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.thumb-dateils {
+  display: flex;
+  flex-wrap: wrap;
+  width: 526px;
+  gap: 8px;
+}
+.dateils {
+  display: flex;
+  gap: 8px;
+  border-radius: 100px;
+  padding: 12px 18px;
+  background-color: #f2f4f7;
+  mix-blend-mode: multiply;
 }

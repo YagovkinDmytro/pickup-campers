@@ -1,0 +1,9 @@
+.navigation {
+  padding: 20px 60px;
+}
+
+.navigation-list {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0px;
+}

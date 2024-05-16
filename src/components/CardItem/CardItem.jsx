@@ -42,7 +42,7 @@ const CardItem = () => {
             <div className={css['title']}>
               <h2>{name}</h2>
               <div className={css['favorite']}>
-                <h2>€{price}.00</h2>
+                <h2>€{price},00</h2>
                 <button type="button" className={css['button-hart']}>
                   <Hart
                     className={css['button-hart-icon']}

@@ -6,6 +6,9 @@ import { ReactComponent as CloseIcon } from '../../images/icons/close.svg';
 import { ReactComponent as Star } from '../../images/icons/star.svg';
 import { selectInfoModalDetails } from '../../redux/selectors';
 import { ReactComponent as Location } from '../../images/icons/map-pin.svg';
+import { nanoid } from '@reduxjs/toolkit';
+
+// console.log(nanoid());
 
 const ModalCardDetails = () => {
   const dispatch = useDispatch();
@@ -62,18 +65,18 @@ const ModalCardDetails = () => {
             <p>{location}</p>
           </div>
         </div>
-        <h2 className={css['price-item']}>€{price}.00</h2>
-        <div className={css['thumb-card-picture']}>
+        <h2 className={css['price-item']}>€{price},00</h2>
+        <ul className={css['thumb-card-picture']}>
           {gallery.map(cardPicture => (
-            <img
-              className={css['card-picture']}
-              src={cardPicture}
-              alt="camper"
-              width={290}
-              height={310}
-            />
+            <li key={nanoid()}>
+              <img
+                className={css['card-picture']}
+                src={cardPicture}
+                alt="camper"
+              />
+            </li>
           ))}
-        </div>
+        </ul>
         <div className={css['info']}>
           <p className={css['description']}>{description}</p>
         </div>

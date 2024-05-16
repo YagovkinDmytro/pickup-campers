@@ -7,14 +7,13 @@ import {
 } from '../../redux/selectors';
 import { useEffect } from 'react';
 import CardItem from '../CardItem/CardItem';
+import Loader from 'components/Loader/Loader';
 
 const CardList = () => {
   const dispatch = useDispatch();
   const campers = useSelector(selectCampers);
   const isLoading = useSelector(selectIsloading);
   const error = useSelector(selectError);
-  // console.log(campers);
-  // console.log(campers[0]['_id']);
 
   useEffect(() => {
     dispatch(fetchCampers());
@@ -22,7 +21,7 @@ const CardList = () => {
 
   return (
     <>
-      {isLoading && <p>Request in progress...</p>}
+      {isLoading && <Loader />}
       {error && <h1>{error}</h1>}
       <ul>{campers && campers.length > 0 && <CardItem />}</ul>
     </>

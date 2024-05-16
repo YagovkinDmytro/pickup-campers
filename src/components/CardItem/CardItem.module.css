@@ -63,22 +63,17 @@
   color: #475467;
 }
 
-.categories-list {
-  display: flex;
-  margin-bottom: 24px;
+.button-hart {
+  background-color: transparent;
+  border: none;
 }
 
-.thumb-dateils {
-  display: flex;
-  flex-wrap: wrap;
-  width: 526px;
-  gap: 8px;
+.button-hart-icon {
+  fill: none;
+  stroke: #101828;
 }
-.dateils {
-  display: flex;
-  gap: 8px;
-  border-radius: 100px;
-  padding: 12px 18px;
-  background-color: #f2f4f7;
-  mix-blend-mode: multiply;
+
+.button-hart-icon:hover {
+  fill: #e44848;
+  stroke: #e44848;
 }

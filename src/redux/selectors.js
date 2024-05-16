@@ -6,6 +6,10 @@ export const selectIsloading = state => state.campers.campers.isloading;
 
 export const selectError = state => state.campers.campers.error;
 
+export const selectCloseModal = state => state.details.details.closeModal;
+
+export const selectModalCardDatailsId = state => state.details.details.id;
+
 export const selectInfoCardCampers = createSelector(
   [selectCampers],
   campers => {
@@ -47,3 +51,10 @@ export const selectInfoCardCampers = createSelector(
     );
   }
 );
+
+// export const selectInfoModalCamper = createSelector(
+//   [selectCampers],
+//   campers => {
+//     return campers;
+//   }
+// );

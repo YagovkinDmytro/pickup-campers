@@ -1,5 +1,4 @@
 // import Button from 'components/Button/Button';
-// import CardList from 'components/CardList/CardList';
 import Navigation from 'components/Navigation/Navigation';
 import CampersPage from 'pages/Campers/Campers';
 import Favorites from 'pages/Favorites/Favorites';
@@ -17,7 +16,6 @@ const App = () => {
         </Route>
         <Route path="*" element={<Navigate to="/" />}></Route>
       </Routes>
-      {/* <CardList /> */}
       {/* <Button type="button" variant="button-search">
         Search
       </Button>

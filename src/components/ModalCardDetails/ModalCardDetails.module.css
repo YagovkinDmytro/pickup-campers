@@ -7,11 +7,72 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(17, 18, 19, 0.4);
   z-index: 1200;
 }
 
 .modal {
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 24px);
+  background-color: #f7f7f7;
+  width: 902px;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.close-modal-button {
+  background-color: transparent;
+  border: none;
+}
+
+.thumb-stars-location {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.star {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.price-item {
+  margin-bottom: 24px;
+}
+
+.thumb-card-picture {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card-picture {
+  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  max-width: 902px;
+  margin-bottom: 44px;
+}
+
+.description {
+  overflow: hidden;
+  line-height: 150%;
+  color: #475467;
 }

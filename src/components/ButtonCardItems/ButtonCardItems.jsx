@@ -8,6 +8,8 @@ import {
 const ButtonCardItems = ({ id, type, variant, children }) => {
   const dispatch = useDispatch();
 
+  console.log(id);
+
   const handleSetCloseModal = () => {
     dispatch(setCloseModal(true));
   };

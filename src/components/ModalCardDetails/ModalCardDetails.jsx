@@ -1,16 +1,24 @@
 import { useEffect } from 'react';
 import css from './ModalCardDetails.module.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCloseModal } from '../../redux/ModalCardDetailsSlice';
-import ModalCardDetailsItem from 'components/ModalCardDetailsItem/ModalCardDetailsItem';
+import { ReactComponent as CloseIcon } from '../../images/icons/close.svg';
+import { ReactComponent as Star } from '../../images/icons/star.svg';
+import { selectInfoModalDetails } from '../../redux/selectors';
+import { ReactComponent as Location } from '../../images/icons/map-pin.svg';
 
 const ModalCardDetails = () => {
   const dispatch = useDispatch();
 
+  const modalCardDetails = useSelector(selectInfoModalDetails);
+
+  const { name, price, rating, reviews, location, description, gallery } =
+    modalCardDetails[0];
+
   const handleSetCloseModal = evt => {
     if (
       evt.target.className === 'overlay' ||
-      evt.target.name === 'close-button'
+      evt.currentTarget.name === 'close-button'
     ) {
       dispatch(setCloseModal(false));
     }
@@ -31,10 +39,44 @@ const ModalCardDetails = () => {
   return (
     <div className={css['overlay']} onClick={handleSetCloseModal}>
       <div className={css['modal']}>
-        <button name="close-button" type="button" onClick={handleSetCloseModal}>
-          Close
-        </button>
-        <ModalCardDetailsItem />
+        <div className={css['title']}>
+          <h2>{name}</h2>
+          <button
+            name="close-button"
+            type="button"
+            className={css['close-modal-button']}
+            onClick={handleSetCloseModal}
+          >
+            <CloseIcon width={32} height={32}></CloseIcon>
+          </button>
+        </div>
+        <div className={css['thumb-stars-location']}>
+          <div className={css['star']}>
+            <Star width={16} height={16} />
+            <p>
+              {rating} ({reviews.length} Reviews)
+            </p>
+          </div>
+          <div className={css['location']}>
+            <Location width={16} height={16} />
+            <p>{location}</p>
+          </div>
+        </div>
+        <h2 className={css['price-item']}>€{price}.00</h2>
+        <div className={css['thumb-card-picture']}>
+          {gallery.map(cardPicture => (
+            <img
+              className={css['card-picture']}
+              src={cardPicture}
+              alt="camper"
+              width={290}
+              height={310}
+            />
+          ))}
+        </div>
+        <div className={css['info']}>
+          <p className={css['description']}>{description}</p>
+        </div>
       </div>
     </div>
   );

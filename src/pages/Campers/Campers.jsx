@@ -5,7 +5,6 @@ import { selectCloseModal } from '../../redux/selectors';
 
 const CampersPage = () => {
   const openModal = useSelector(selectCloseModal);
-  console.log(openModal);
 
   return (
     <div>

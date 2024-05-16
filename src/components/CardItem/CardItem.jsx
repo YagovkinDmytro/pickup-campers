@@ -2,15 +2,13 @@ import { ReactComponent as Hart } from '../../images/icons/hart.svg';
 import { ReactComponent as Star } from '../../images/icons/star.svg';
 import { ReactComponent as Location } from '../../images/icons/map-pin.svg';
 import { useSelector } from 'react-redux';
-import { selectCampers, selectInfoCardCampers } from '../../redux/selectors';
-import DetailsListItems from 'components/DetaisListItems/DetailsListItems';
+import { selectInfoCardCampers } from '../../redux/selectors';
+import CategoriesItemList from 'components/CategoriesItemList/CategoriesItemList';
 import ButtonCardItems from 'components/ButtonCardItems/ButtonCardItems';
 import css from './CardItem.module.css';
 
 const CardItem = () => {
   const infoCardCampers = useSelector(selectInfoCardCampers);
-  const campers = useSelector(selectCampers);
-  console.log(campers);
 
   return infoCardCampers.map(
     ({
@@ -67,7 +65,7 @@ const CardItem = () => {
               </div>
             </div>
             <p className={css['description']}>{description}</p>
-            <DetailsListItems
+            <CategoriesItemList
               adults={adults}
               engine={engine}
               transmission={transmission}

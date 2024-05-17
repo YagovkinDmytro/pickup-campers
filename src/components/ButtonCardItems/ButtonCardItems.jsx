@@ -3,7 +3,7 @@ import css from './ButtonCardItems.module.css';
 import {
   setCloseModal,
   setModalCardDetailsId,
-} from '../../redux/modalCardDetailsSlice';
+} from '../../redux/ModalCardDetailsSlice';
 import { selectCardDetailsPage } from '../../redux/selectors';
 import { setPage } from '../../redux/campersSlice';
 

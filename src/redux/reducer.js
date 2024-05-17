@@ -1,5 +1,5 @@
 import { campersSliceReducer } from './campersSlice';
-import { detailsModalSliceReduser } from './ModalCardDetailsSlice';
+import { detailsModalSliceReduser } from './modalCardDetailsSlice';
 
 export const rootReducer = {
   campers: campersSliceReducer,

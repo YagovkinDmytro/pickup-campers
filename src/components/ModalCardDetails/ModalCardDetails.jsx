@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import css from './ModalCardDetails.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCloseModal } from '../../redux/ModalCardDetailsSlice';
+import { setCloseModal } from '../../redux/modalCardDetailsSlice';
 import { ReactComponent as CloseIcon } from '../../images/icons/close.svg';
 import { ReactComponent as Star } from '../../images/icons/star.svg';
 import { selectInfoModalDetails } from '../../redux/selectors';

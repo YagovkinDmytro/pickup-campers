@@ -8,13 +8,13 @@ import { selectCardDetailsPage } from '../../redux/selectors';
 import { setPage } from '../../redux/campersSlice';
 
 const ButtonCardItems = ({ id, type, variant, children }) => {
+  const page = useSelector(selectCardDetailsPage);
+
   const dispatch = useDispatch();
 
   const handleSetCloseModal = () => {
     dispatch(setCloseModal(true));
   };
-
-  const page = useSelector(selectCardDetailsPage);
 
   const handleLoadMore = () => {
     dispatch(setPage(page + 1));

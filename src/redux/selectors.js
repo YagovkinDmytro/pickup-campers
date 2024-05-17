@@ -2,9 +2,11 @@ import { createSelector } from '@reduxjs/toolkit';
 
 export const selectCampers = state => state.campers.campers.items;
 
-export const selectIsloading = state => state.campers.campers.isloading;
+export const selectIsLoading = state => state.campers.campers.isloading;
 
 export const selectError = state => state.campers.campers.error;
+
+export const selectCardDetailsPage = state => state.campers.campers.page;
 
 export const selectCloseModal = state => state.details.details.closeModal;
 

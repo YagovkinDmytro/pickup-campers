@@ -4,7 +4,6 @@ import {
   setCloseModal,
   setModalCardDetailsId,
 } from '../../redux/modalCardDetailsSlice';
-import { fetchCampers } from '../../redux/operations';
 import { selectCardDetailsPage } from '../../redux/selectors';
 import { setPage } from '../../redux/campersSlice';
 
@@ -18,7 +17,6 @@ const ButtonCardItems = ({ id, type, variant, children }) => {
   const page = useSelector(selectCardDetailsPage);
 
   const handleLoadMore = () => {
-    dispatch(fetchCampers(page + 1));
     dispatch(setPage(page + 1));
   };
 

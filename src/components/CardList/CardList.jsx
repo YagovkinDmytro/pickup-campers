@@ -30,9 +30,12 @@ const CardList = () => {
       <ul className={css['card-list']}>
         {campers && campers.length > 0 && <CardItem />}
       </ul>
-      <ButtonCardItems type="button" variant="button-load-more">
-        Load more
-      </ButtonCardItems>
+
+      {campers.length <= 12 && (
+        <ButtonCardItems type="button" variant="button-load-more">
+          Load more
+        </ButtonCardItems>
+      )}
     </div>
   );
 };

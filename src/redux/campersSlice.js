@@ -21,9 +21,6 @@ const campersSlice = createSlice({
     setPage: (state, { payload }) => {
       state.campers.page = payload;
     },
-    // addCampersItems: (state, { payload }) => {
-    //   state.campers.items = payload;
-    // },
   },
   extraReducers: builder => {
     builder
@@ -32,7 +29,7 @@ const campersSlice = createSlice({
         state.campers.isLoading = false;
         state.campers.error = null;
         state.campers.items = payload;
-        // return { ...state, campers: [...state.campers, payload] };
+        // state.campers.items = [...state.campers.items, ...payload];
       })
       .addCase(fetchCampers.rejected, handleRejected);
   },

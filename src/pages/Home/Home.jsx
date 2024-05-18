@@ -1,5 +1,4 @@
 import css from './home.module.css';
-import homeImage from '../../images/camper-home.jpg';
 
 const HomePage = () => {
   return (
@@ -22,7 +21,6 @@ const HomePage = () => {
         With Pickup-Campers you can enjoy freedom of movement and the comfort of
         home, wherever you are. Join us and discover a new way to travel!
       </p>
-      {/* <img src={homeImage} alt="camper" /> */}
     </div>
   );
 };

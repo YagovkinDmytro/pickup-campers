@@ -8,8 +8,6 @@ import { selectInfoModalDetails } from '../../redux/selectors';
 import { ReactComponent as Location } from '../../images/icons/map-pin.svg';
 import { nanoid } from '@reduxjs/toolkit';
 
-// console.log(nanoid());
-
 const ModalCardDetails = () => {
   const dispatch = useDispatch();
 

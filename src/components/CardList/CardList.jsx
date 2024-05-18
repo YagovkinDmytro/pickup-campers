@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCampers } from '../../redux/operations';
 import {
   selectCampers,
-  selectCardDetailsPage,
   selectError,
   selectIsLoading,
 } from '../../redux/selectors';
@@ -17,11 +16,10 @@ const CardList = () => {
   const campers = useSelector(selectCampers);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
-  const page = useSelector(selectCardDetailsPage);
 
   useEffect(() => {
-    dispatch(fetchCampers(page));
-  }, [dispatch, page]);
+    dispatch(fetchCampers());
+  }, [dispatch]);
 
   return (
     <div className={css['card-list-container']}>
@@ -30,7 +28,6 @@ const CardList = () => {
       <ul className={css['card-list']}>
         {campers && campers.length > 0 && <CardItem />}
       </ul>
-
       {campers.length <= 12 && (
         <ButtonCardItems type="button" variant="button-load-more">
           Load more

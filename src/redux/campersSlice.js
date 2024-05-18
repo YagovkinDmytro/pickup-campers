@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCampers } from './operations';
+import { fetchCampers, fetchLoadMore } from './operations';
 
 const handlePending = state => {
   state.campers.isLoading = true;
@@ -29,9 +29,15 @@ const campersSlice = createSlice({
         state.campers.isLoading = false;
         state.campers.error = null;
         state.campers.items = payload;
-        // state.campers.items = [...state.campers.items, ...payload];
       })
-      .addCase(fetchCampers.rejected, handleRejected);
+      .addCase(fetchCampers.rejected, handleRejected)
+      .addCase(fetchLoadMore.pending, handlePending)
+      .addCase(fetchLoadMore.fulfilled, (state, { payload }) => {
+        state.campers.isLoading = false;
+        state.campers.error = null;
+        state.campers.items.push(...payload);
+      })
+      .addCase(fetchLoadMore.rejected, handleRejected);
   },
 });
 

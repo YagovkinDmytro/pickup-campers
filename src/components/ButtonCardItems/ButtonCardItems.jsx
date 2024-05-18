@@ -6,28 +6,22 @@ import {
 } from '../../redux/ModalCardDetailsSlice';
 import { selectCardDetailsPage } from '../../redux/selectors';
 import { setPage } from '../../redux/campersSlice';
+import { fetchLoadMore } from '../../redux/operations';
 
 const ButtonCardItems = ({ id, type, variant, children }) => {
   const page = useSelector(selectCardDetailsPage);
 
   const dispatch = useDispatch();
 
-  const handleSetCloseModal = () => {
-    dispatch(setCloseModal(true));
-  };
-
-  const handleLoadMore = () => {
-    dispatch(setPage(page + 1));
-  };
-
   const handleButtonOnClick = evt => {
-    dispatch(setModalCardDetailsId(evt.target.id));
     switch (variant) {
       case 'button-show-more':
-        handleSetCloseModal();
+        dispatch(setCloseModal(true));
+        dispatch(setModalCardDetailsId(evt.target.id));
         break;
       case 'button-load-more':
-        handleLoadMore();
+        dispatch(setPage(page + 1));
+        dispatch(fetchLoadMore(page + 1));
         break;
       default:
         return;

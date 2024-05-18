@@ -1,0 +1,27 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: inherit;
+  background-image: url(../../images/camper-home.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  object-fit: fill;
+  width: 1440px;
+  height: 750px;
+}
+
+.title {
+  margin-top: 40px;
+  color: #f2f4f7;
+}
+
+.title-text {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: #f2f4f7;
+}
+
+.text {
+  color: #f2f4f7;
+}

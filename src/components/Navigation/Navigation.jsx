@@ -10,7 +10,7 @@ const Navigation = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="campers">Campers</NavLink>
+            <NavLink to="catalog">Campers</NavLink>
           </li>
           <li>
             <NavLink to="favorites">Favorites</NavLink>

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import css from './ModalCardDetails.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCloseModal } from '../../redux/ModalCardDetailsSlice';
@@ -7,9 +7,12 @@ import { ReactComponent as Star } from '../../images/icons/star.svg';
 import { selectInfoModalDetails } from '../../redux/selectors';
 import { ReactComponent as Location } from '../../images/icons/map-pin.svg';
 import { nanoid } from '@reduxjs/toolkit';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 
 const ModalCardDetails = () => {
   const dispatch = useDispatch();
+
+  const previousLocation = useRef('/catalog');
 
   const modalCardDetails = useSelector(selectInfoModalDetails);
 
@@ -48,7 +51,9 @@ const ModalCardDetails = () => {
             className={css['close-modal-button']}
             onClick={handleSetCloseModal}
           >
-            <CloseIcon width={32} height={32}></CloseIcon>
+            <Link to={previousLocation.current}>
+              <CloseIcon width={32} height={32}></CloseIcon>
+            </Link>
           </button>
         </div>
         <div className={css['thumb-stars-location']}>
@@ -78,6 +83,17 @@ const ModalCardDetails = () => {
         <div className={css['info']}>
           <p className={css['description']}>{description}</p>
         </div>
+        <div>
+          <ul>
+            <li>
+              <NavLink to="/catalog/feature">Features</NavLink>
+            </li>
+            <li>
+              <NavLink to="/catalog/reviews">Reviews</NavLink>
+            </li>
+          </ul>
+        </div>
+        <Outlet />
       </div>
     </div>
   );

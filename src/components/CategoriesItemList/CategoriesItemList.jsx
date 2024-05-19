@@ -33,90 +33,90 @@ const CategoriesItemList = ({
   return (
     <div className={css['categories-list']}>
       <ul className={css['thumb-dateils']}>
-        {adults && (
+        {adults && adults !== 0 ? (
           <li className={css['dateils']}>
-            <People />
+            <People width={20} height={20} />
             <p>{adults} Adults</p>
           </li>
-        )}
-        {transmission && (
+        ) : null}
+        {transmission && transmission !== 0 ? (
           <li className={css['dateils']}>
-            <Transmission />
+            <Transmission width={20} height={20} />
             <p>{transmission === 'automatic' ? 'Automatic' : 'Manual'}</p>
           </li>
-        )}
-        {engine && (
+        ) : null}
+        {engine && engine !== 0 ? (
           <li className={css['dateils']}>
-            <Gas />
+            <Gas width={20} height={20} />
             <p>{engine === 'petrol' ? 'Petrol' : 'Diesel'}</p>
           </li>
-        )}
-        {kitchen && (
+        ) : null}
+        {kitchen && kitchen !== 0 ? (
           <li className={css['dateils']}>
-            <Kitchen />
+            <Kitchen width={20} height={20} />
             <p>Kitchen</p>
           </li>
-        )}
-        {beds && (
+        ) : null}
+        {beds && beds !== 0 ? (
           <li className={css['dateils']}>
-            <Bed />
+            <Bed width={20} height={20} />
             <p>{beds} Beds</p>
           </li>
-        )}
-        {airConditioner && (
+        ) : null}
+        {airConditioner && airConditioner !== 0 ? (
           <li className={css['dateils']}>
-            <AC />
+            <AC width={20} height={20} />
             <p>AC</p>
           </li>
-        )}
-        {microwave && (
+        ) : null}
+        {microwave && microwave !== 0 ? (
           <li className={css['dateils']}>
-            <Microwave />
+            <Microwave width={20} height={20} />
             <p>Microwave</p>
           </li>
-        )}
-        {freezer && (
+        ) : null}
+        {freezer && freezer !== 0 ? (
           <li className={css['dateils']}>
-            <Freezer />
+            <Freezer width={20} height={20} />
             <p>Freezer</p>
           </li>
-        )}
-        {toilet && (
+        ) : null}
+        {toilet && toilet !== 0 ? (
           <li className={css['dateils']}>
-            <Toilet />
+            <Toilet width={20} height={20} />
             <p>Toilet</p>
           </li>
-        )}
-        {TV && (
+        ) : null}
+        {TV && TV !== 0 ? (
           <li className={css['dateils']}>
-            <TvIcon />
+            <TvIcon width={20} height={20} />
             <p>TV</p>
           </li>
-        )}
-        {CD && (
+        ) : null}
+        {CD && CD !== 0 ? (
           <li className={css['dateils']}>
-            <CdIcon />
+            <CdIcon width={20} height={20} />
             <p>CD</p>
           </li>
-        )}
-        {radio && (
+        ) : null}
+        {radio && radio !== 0 ? (
           <li className={css['dateils']}>
-            <Radio />
+            <Radio width={20} height={20} />
             <p>Radio</p>
           </li>
-        )}
-        {shower && (
+        ) : null}
+        {shower && shower !== 0 ? (
           <li className={css['dateils']}>
-            <Shower />
+            <Shower width={20} height={20} />
             <p>Shower</p>
           </li>
-        )}
-        {hob && (
+        ) : null}
+        {hob && hob !== 0 ? (
           <li className={css['dateils']}>
-            <Hob />
+            <Hob width={20} height={20} />
             <p>Hob</p>
           </li>
-        )}
+        ) : null}
       </ul>
     </div>
   );

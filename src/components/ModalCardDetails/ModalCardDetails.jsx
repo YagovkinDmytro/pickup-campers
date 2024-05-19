@@ -7,10 +7,15 @@ import { ReactComponent as Star } from '../../images/icons/star.svg';
 import { selectInfoModalDetails } from '../../redux/selectors';
 import { ReactComponent as Location } from '../../images/icons/map-pin.svg';
 import { nanoid } from '@reduxjs/toolkit';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import Features from 'components/Features/Features';
+import Reviews from 'components/Reviews/Reviews';
+import NavigationDetails from 'components/NavigationDetails/NavigationDetails';
 
 const ModalCardDetails = () => {
   const dispatch = useDispatch();
+  const currentlocation = useLocation();
+  console.log(currentlocation);
 
   const previousLocation = useRef('/catalog');
 
@@ -76,6 +81,8 @@ const ModalCardDetails = () => {
                 className={css['card-picture']}
                 src={cardPicture}
                 alt="camper"
+                width={290}
+                height={310}
               />
             </li>
           ))}
@@ -84,16 +91,10 @@ const ModalCardDetails = () => {
           <p className={css['description']}>{description}</p>
         </div>
         <div>
-          <ul>
-            <li>
-              <NavLink to="/catalog/feature">Features</NavLink>
-            </li>
-            <li>
-              <NavLink to="/catalog/reviews">Reviews</NavLink>
-            </li>
-          </ul>
+          <NavigationDetails />
+          {currentlocation.pathname === '/catalog/feature' && <Features />}
+          {currentlocation.pathname === '/catalog/reviews' && <Reviews />}
         </div>
-        <Outlet />
       </div>
     </div>
   );

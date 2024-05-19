@@ -1,0 +1,29 @@
+.container-details {
+  width: 430px;
+}
+
+.capitalize::first-letter {
+  text-transform: uppercase;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  margin-bottom: 24px;
+}
+
+.navigation-line {
+  width: 430px;
+  height: 1px;
+  background-color: #d9d9d9;
+  margin-bottom: 10px;
+}
+.text-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+}

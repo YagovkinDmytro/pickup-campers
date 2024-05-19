@@ -1,0 +1,14 @@
+.navigation-container {
+  display: flex;
+  gap: 40px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  padding-bottom: 21px;
+}
+.navigation-line {
+  width: 902px;
+  height: 1px;
+  background-color: #d9d9d9;
+  margin-bottom: 20px;
+}

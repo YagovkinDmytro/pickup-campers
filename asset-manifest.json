@@ -1,7 +1,13 @@
 {
   "files": {
-    "main.css": "/pickup-campers/static/css/main.26b289cf.css",
-    "main.js": "/pickup-campers/static/js/main.93da5484.js",
+    "main.css": "/pickup-campers/static/css/main.fe045fa6.css",
+    "main.js": "/pickup-campers/static/js/main.9f356790.js",
+    "static/css/590.d16d3e31.chunk.css": "/pickup-campers/static/css/590.d16d3e31.chunk.css",
+    "static/js/590.58a3add9.chunk.js": "/pickup-campers/static/js/590.58a3add9.chunk.js",
+    "static/css/372.0acb639d.chunk.css": "/pickup-campers/static/css/372.0acb639d.chunk.css",
+    "static/js/372.cd08b8cf.chunk.js": "/pickup-campers/static/js/372.cd08b8cf.chunk.js",
+    "static/js/500.03112363.chunk.js": "/pickup-campers/static/js/500.03112363.chunk.js",
+    "static/js/938.e306d741.chunk.js": "/pickup-campers/static/js/938.e306d741.chunk.js",
     "static/media/camper-home.jpg": "/pickup-campers/static/media/camper-home.843d3a449e7d08190f86.jpg",
     "static/media/air-conditioner.svg": "/pickup-campers/static/media/air-conditioner.30359f91c90be666587d1f85da42b110.svg",
     "static/media/toilet-paper.svg": "/pickup-campers/static/media/toilet-paper.ac77761601bb432278c568a1ff4fb7be.svg",
@@ -22,11 +28,17 @@
     "index.html": "/pickup-campers/index.html",
     "static/media/canteen.svg": "/pickup-campers/static/media/canteen.afe6130490e04e1ebb0a3c725651ff4c.svg",
     "static/media/close.svg": "/pickup-campers/static/media/close.1df64f5d1ae58ecfd7e32e5452c329fd.svg",
-    "main.26b289cf.css.map": "/pickup-campers/static/css/main.26b289cf.css.map",
-    "main.93da5484.js.map": "/pickup-campers/static/js/main.93da5484.js.map"
+    "main.fe045fa6.css.map": "/pickup-campers/static/css/main.fe045fa6.css.map",
+    "main.9f356790.js.map": "/pickup-campers/static/js/main.9f356790.js.map",
+    "590.d16d3e31.chunk.css.map": "/pickup-campers/static/css/590.d16d3e31.chunk.css.map",
+    "590.58a3add9.chunk.js.map": "/pickup-campers/static/js/590.58a3add9.chunk.js.map",
+    "372.0acb639d.chunk.css.map": "/pickup-campers/static/css/372.0acb639d.chunk.css.map",
+    "372.cd08b8cf.chunk.js.map": "/pickup-campers/static/js/372.cd08b8cf.chunk.js.map",
+    "500.03112363.chunk.js.map": "/pickup-campers/static/js/500.03112363.chunk.js.map",
+    "938.e306d741.chunk.js.map": "/pickup-campers/static/js/938.e306d741.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.26b289cf.css",
-    "static/js/main.93da5484.js"
+    "static/css/main.fe045fa6.css",
+    "static/js/main.9f356790.js"
   ]
 }

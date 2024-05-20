@@ -78,7 +78,7 @@ const BookingForm = () => {
               id="email"
               name="email"
               placeholder="Email"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               title="Email should be in the format: example@example.com"
               required
             />

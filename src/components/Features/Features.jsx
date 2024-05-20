@@ -1,7 +1,7 @@
 import CategoriesItemList from 'components/CategoriesItemList/CategoriesItemList';
 import { useSelector } from 'react-redux';
 import { selectInfoModalDetails } from '../../redux/selectors';
-import css from './features.module.css';
+import css from './Features.module.css';
 
 const Features = () => {
   const dataDetailsInfo = useSelector(selectInfoModalDetails);

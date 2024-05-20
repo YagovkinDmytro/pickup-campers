@@ -8,15 +8,15 @@ import { selectInfoModalDetails } from '../../redux/selectors';
 import { ReactComponent as Location } from '../../images/icons/map-pin.svg';
 import { nanoid } from '@reduxjs/toolkit';
 import { Link, useLocation } from 'react-router-dom';
-import Features from 'components/Features/Features';
-import Reviews from 'components/Reviews/Reviews';
+import Features from 'pages/Features/Features';
+import Reviews from 'pages/Reviews/Reviews';
 import NavigationDetails from 'components/NavigationDetails/NavigationDetails';
 import BookingForm from 'components/BookingForm/BookingForm';
 
 const ModalCardDetails = () => {
   const dispatch = useDispatch();
+
   const currentlocation = useLocation();
-  console.log(currentlocation);
 
   const previousLocation = useRef('/catalog');
 

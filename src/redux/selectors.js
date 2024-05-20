@@ -12,6 +12,8 @@ export const selectCloseModal = state => state.details.details.closeModal;
 
 export const selectModalCardDetailsId = state => state.details.details.id;
 
+export const selectfavoritesIdArr = state => state.favorites.favoritesId;
+
 export const selectInfoCardCampers = createSelector(
   [selectCampers],
   campers => {

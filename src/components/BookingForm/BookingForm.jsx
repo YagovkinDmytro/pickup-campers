@@ -9,7 +9,6 @@ const BookingForm = () => {
   const [boolingDate, setBoolingDate] = useState('');
   const [comment, setComment] = useState('');
   const [bookingOrder, setBookingOrder] = useState([]);
-  console.log(bookingOrder);
 
   const handleFormSubmit = evt => {
     setBookingOrder([

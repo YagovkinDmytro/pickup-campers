@@ -1,14 +1,24 @@
 import { ReactComponent as Hart } from '../../images/icons/hart.svg';
 import { ReactComponent as Star } from '../../images/icons/star.svg';
 import { ReactComponent as Location } from '../../images/icons/map-pin.svg';
-import { useSelector } from 'react-redux';
-import { selectInfoCardCampers } from '../../redux/selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectInfoCardCampers,
+  selectfavoritesIdArr,
+} from '../../redux/selectors';
 import CategoriesItemList from 'components/CategoriesItemList/CategoriesItemList';
 import ButtonCardItems from 'components/ButtonCardItems/ButtonCardItems';
 import css from './CardItem.module.css';
+import { addFavoriteCardId } from '../../redux/favoritesSlice';
 
 const CardItem = () => {
   const infoCardCampers = useSelector(selectInfoCardCampers);
+
+  const dispatch = useDispatch();
+
+  const handleFavorite = id => {
+    dispatch(addFavoriteCardId(id));
+  };
 
   return infoCardCampers.map(
     ({
@@ -43,7 +53,13 @@ const CardItem = () => {
               <h2>{name}</h2>
               <div className={css['favorite']}>
                 <h2>€{price},00</h2>
-                <button type="button" className={css['button-hart']}>
+                <button
+                  type="button"
+                  className={css['button-hart']}
+                  onClick={() => {
+                    handleFavorite(_id);
+                  }}
+                >
                   <Hart
                     className={css['button-hart-icon']}
                     width={24}

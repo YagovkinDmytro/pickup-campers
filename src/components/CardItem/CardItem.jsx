@@ -65,14 +65,16 @@ const CardItem = () => {
               </div>
             </div>
             <p className={css['description']}>{description}</p>
-            <CategoriesItemList
-              adults={adults}
-              engine={engine}
-              transmission={transmission}
-              kitchen={kitchen}
-              beds={beds}
-              airConditioner={airConditioner}
-            />
+            <div className={css['categories-container']}>
+              <CategoriesItemList
+                adults={adults}
+                engine={engine}
+                transmission={transmission}
+                kitchen={kitchen}
+                beds={beds}
+                airConditioner={airConditioner}
+              />
+            </div>
           </div>
           <ButtonCardItems id={_id} type="button" variant="button-show-more">
             Show more

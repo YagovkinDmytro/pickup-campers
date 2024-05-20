@@ -23,18 +23,9 @@ const App = () => {
         </Route>
         <Route path="*" element={<Navigate to="/" />}></Route>
       </Routes>
-      {/* <Button type="button" variant="button-search">
+      {/* <ButtonCardItems type="button" variant="button-search">
         Search
-      </Button>
-      <Button type="submit" variant="button-send">
-        Send
-      </Button>
-      <Button type="button" variant="button-show-more">
-        Show more
-      </Button>
-      <Button type="button" variant="button-load-more">
-        Load more
-      </Button> */}
+      </ButtonCardItems> */}
     </Section>
   );
 };

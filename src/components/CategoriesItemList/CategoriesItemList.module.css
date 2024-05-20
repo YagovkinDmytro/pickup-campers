@@ -1,6 +1,6 @@
 .categories-list {
   display: flex;
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
 }
 
 .thumb-dateils {
@@ -9,6 +9,7 @@
   width: 526px;
   gap: 8px;
 }
+
 .dateils {
   display: flex;
   gap: 8px;

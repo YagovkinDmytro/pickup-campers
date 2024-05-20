@@ -12,10 +12,10 @@
 
 .modal {
   position: absolute;
-  background-color: #f7f7f7;
+  background-color: #fff;
   width: 902px;
   height: 720px;
-  padding: 40px 32px 40px 40px;
+  padding: 40px 40px 40px 40px;
   border-radius: 20px;
   overflow: auto;
 }
@@ -75,4 +75,16 @@
 .description {
   line-height: 150%;
   color: #475467;
+}
+
+.info-form-container {
+  display: flex;
+  /* margin-right: 24px; */
+  /* gap: 24px; */
+}
+
+.info-reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }

@@ -3,6 +3,7 @@ import css from './navigationDetails.module.css';
 import styled from 'styled-components';
 
 const StyledLink = styled(NavLink)`
+  color: var(--main);
   &.active {
     text-decoration: underline #e44848;
     text-underline-offset: 24px;

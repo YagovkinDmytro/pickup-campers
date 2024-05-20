@@ -4,6 +4,16 @@
 *::after {
   box-sizing: border-box;
 }
+:root {
+  --button: #e44848;
+  --main-color: #e44848;
+  --main: #101828;
+  --inputs: #f7f7f7;
+  --block-features: #f2f4f7;
+  --rating: #ffc531;
+  --text: #475467;
+  --font-family: 'Inter', sans-serif;
+}
 
 body {
   margin: 0;
@@ -12,7 +22,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f7f7f7;
+  background-color: #fff;
 }
 
 code {

@@ -11,6 +11,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Features from 'components/Features/Features';
 import Reviews from 'components/Reviews/Reviews';
 import NavigationDetails from 'components/NavigationDetails/NavigationDetails';
+import BookingForm from 'components/BookingForm/BookingForm';
 
 const ModalCardDetails = () => {
   const dispatch = useDispatch();
@@ -92,8 +93,13 @@ const ModalCardDetails = () => {
         </div>
         <div>
           <NavigationDetails />
-          {currentlocation.pathname === '/catalog/feature' && <Features />}
-          {currentlocation.pathname === '/catalog/reviews' && <Reviews />}
+          <div className={css['info-form-container']}>
+            {currentlocation.pathname === '/catalog/feature' && <Features />}
+            <div className={css['info-reviews-container']}>
+              {currentlocation.pathname === '/catalog/reviews' && <Reviews />}
+            </div>
+            <BookingForm />
+          </div>
         </div>
       </div>
     </div>

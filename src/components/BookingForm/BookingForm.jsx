@@ -1,12 +1,27 @@
 import { useState } from 'react';
+import css from './bookingForm.module.css';
+import ButtonCardItems from 'components/ButtonCardItems/ButtonCardItems';
+import { nanoid } from '@reduxjs/toolkit';
 
-const Form = () => {
+const BookingForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [boolingDate, setBoolingDate] = useState('');
   const [comment, setComment] = useState('');
+  const [bookingOrder, setBookingOrder] = useState([]);
+  console.log(bookingOrder);
 
   const handleFormSubmit = evt => {
+    setBookingOrder([
+      ...bookingOrder,
+      {
+        id: nanoid(),
+        name,
+        email,
+        boolingDate,
+        comment,
+      },
+    ]);
     evt.preventDefault();
     resetForm();
   };
@@ -34,13 +49,17 @@ const Form = () => {
 
   return (
     <>
-      <div>
+      <div className={css['booking-container']}>
+        <h2 className={css['title']}>Book your campervan now</h2>
+        <p className={css['title-text']}>
+          Stay connected! We are always ready to help you.
+        </p>
         <form className="form-container" onSubmit={handleFormSubmit}>
           <div className="form-container-name">
             <input
               value={name}
               onChange={evt => handleChange(evt)}
-              className=""
+              className={css['name-imput']}
               type="text"
               id="name"
               name="name"
@@ -54,13 +73,13 @@ const Form = () => {
             <input
               value={email}
               onChange={evt => handleChange(evt)}
-              className=""
+              className={css['email-imput']}
               type="email"
               id="email"
               name="email"
               placeholder="Email"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-              title="Email should be in the format: characters@characters.domain. For example: example@example.com"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$"
+              title="Email should be in the format: example@example.com"
               required
             />
           </div>
@@ -68,12 +87,10 @@ const Form = () => {
             <input
               value={boolingDate}
               onChange={evt => handleChange(evt)}
-              className=""
+              className={css['boolingdate-imput']}
               type="date"
               id="boolingDate"
               name="boolingDate"
-              placeholder="Booling date"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               title="Please choose a new date"
               required
             />
@@ -82,19 +99,20 @@ const Form = () => {
             <textarea
               value={comment}
               onChange={evt => handleChange(evt)}
-              className=""
+              className={css['comment-imput']}
               id="comment"
               name="comment"
               placeholder="Comment"
             />
           </div>
-          <button className="" type="submit">
-            Add contact
-          </button>
+
+          <ButtonCardItems type="submit" variant="button-send">
+            Send
+          </ButtonCardItems>
         </form>
       </div>
     </>
   );
 };
 
-export default Form;
+export default BookingForm;

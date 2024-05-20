@@ -13,6 +13,10 @@
   justify-content: space-between;
 }
 
+.categories-container {
+  margin-bottom: 24px;
+}
+
 .info {
   display: flex;
   flex-direction: column;

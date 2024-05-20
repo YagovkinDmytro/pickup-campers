@@ -1,0 +1,39 @@
+.container-reviews {
+  display: flex;
+  flex-direction: column;
+  width: 430px;
+  margin-right: 24px;
+  gap: 16px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f4f7;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.container-info {
+  width: 430px;
+  display: flex;
+  gap: 16px;
+}
+
+.name-stars-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name-letter {
+  color: var(--main-color);
+}
+
+.name {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 133%;
+}

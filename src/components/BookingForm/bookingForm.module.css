@@ -1,0 +1,47 @@
+.booking-container {
+  width: 400px;
+  height: 484px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 24px;
+}
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  margin-bottom: 8px;
+}
+
+.title-text {
+  color: #475467;
+  margin-bottom: 24px;
+}
+
+.imput {
+  border: 1px solid #d9d9d9;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  width: 382px;
+  padding: 18px 0px 18px 18px;
+}
+.name-imput {
+  composes: imput;
+  margin-bottom: 14px;
+}
+
+.email-imput {
+  composes: imput;
+  margin-bottom: 14px;
+}
+
+.boolingdate-imput {
+  composes: imput;
+  margin-bottom: 14px;
+  color: #475467;
+}
+
+.comment-imput {
+  composes: imput;
+  height: 82px;
+  margin-bottom: 24px;
+}

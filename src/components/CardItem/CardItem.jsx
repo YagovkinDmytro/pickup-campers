@@ -2,10 +2,7 @@ import { ReactComponent as Hart } from '../../images/icons/hart.svg';
 import { ReactComponent as Star } from '../../images/icons/star.svg';
 import { ReactComponent as Location } from '../../images/icons/map-pin.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  selectInfoCardCampers,
-  selectfavoritesIdArr,
-} from '../../redux/selectors';
+import { selectInfoCardCampers } from '../../redux/selectors';
 import CategoriesItemList from 'components/CategoriesItemList/CategoriesItemList';
 import ButtonCardItems from 'components/ButtonCardItems/ButtonCardItems';
 import css from './CardItem.module.css';

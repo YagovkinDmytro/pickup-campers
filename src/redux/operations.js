@@ -31,18 +31,3 @@ export const fetchLoadMore = createAsyncThunk(
     }
   }
 );
-
-// export const fetchFavoritesCampers = createAsyncThunk(
-//   'campers',
-//   async ({}, thunkAPI) => {
-//     try {
-//       const params = new URLSearchParams({
-//         _id: 1,
-//       });
-//       const response = await axios.get(`/campers/?${params}`);
-//       return response.data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );

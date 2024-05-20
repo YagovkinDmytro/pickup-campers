@@ -23,7 +23,7 @@ const App = () => {
             </Route>
             <Route path="favorites" element={<Favorites />} />
           </Route>
-          <Route path="*" element={<Navigate to="/" />}></Route>
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Section>
     </Suspense>

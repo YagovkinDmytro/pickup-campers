@@ -1,5 +1,5 @@
 import { campersSliceReducer } from './campersSlice';
-import { detailsModalSliceReduser } from './modalCardDetailsSlice';
+import { detailsModalSliceReduser } from './ModalCardDetailsSlice';
 import { favoritesReducer } from './favoritesSlice';
 
 import { persistReducer } from 'redux-persist';

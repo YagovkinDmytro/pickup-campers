@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import css from './ModalCardDetails.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCloseModal } from '../../redux/modalCardDetailsSlice';
@@ -17,8 +17,6 @@ const ModalCardDetails = () => {
   const dispatch = useDispatch();
 
   const currentlocation = useLocation();
-
-  const previousLocation = useRef('/catalog');
 
   const modalCardDetails = useSelector(selectInfoModalDetails);
 

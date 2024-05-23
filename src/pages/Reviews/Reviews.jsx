@@ -2,6 +2,7 @@ import css from './reviews.module.css';
 import { ReactComponent as Star } from '../../images/icons/star.svg';
 import { selectInfoModalDetails } from '../../redux/selectors';
 import { useSelector } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
 
 const Reviews = () => {
   const dataDetailsInfo = useSelector(selectInfoModalDetails);
@@ -19,7 +20,7 @@ const Reviews = () => {
     };
 
     return (
-      <div className={css['container-reviews']}>
+      <div key={nanoid()} className={css['container-reviews']}>
         <div className={css['container-info']}>
           <div className={css['image-container']}>
             <h2 className={css['name-letter']}>{capitalizedLetter}</h2>

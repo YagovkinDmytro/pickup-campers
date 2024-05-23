@@ -57,7 +57,7 @@ const ModalCardDetails = () => {
             className={css['close-modal-button']}
             onClick={handleSetCloseModal}
           >
-            <Link to={previousLocation.current}>
+            <Link to={'/catalog'}>
               <CloseIcon width={32} height={32}></CloseIcon>
             </Link>
           </button>

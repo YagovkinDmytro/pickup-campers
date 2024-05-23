@@ -7,6 +7,7 @@ import CategoriesItemList from 'components/CategoriesItemList/CategoriesItemList
 import ButtonCardItems from 'components/ButtonCardItems/ButtonCardItems';
 import css from './CardItem.module.css';
 import { addFavoriteCardId } from '../../redux/favoritesSlice';
+import { Link } from 'react-router-dom';
 
 const CardItem = () => {
   const infoCardCampers = useSelector(selectInfoCardCampers);
@@ -89,9 +90,11 @@ const CardItem = () => {
               />
             </div>
           </div>
-          <ButtonCardItems id={_id} type="button" variant="button-show-more">
-            Show more
-          </ButtonCardItems>
+          <Link to={'/catalog/feature'}>
+            <ButtonCardItems id={_id} type="button" variant="button-show-more">
+              Show more
+            </ButtonCardItems>
+          </Link>
         </div>
       </li>
     )

@@ -14,15 +14,19 @@ const StyledLink = styled(NavLink)`
 const NavigationDetails = () => {
   return (
     <>
-      <ul className={css['navigation-container']}>
-        <li>
-          <StyledLink to="/catalog/feature">Features</StyledLink>
-        </li>
-        <li>
-          <StyledLink to="/catalog/reviews">Reviews</StyledLink>
-        </li>
-      </ul>
-      <div className={css['navigation-line']}></div>
+      <nav>
+        <ul className={css['navigation-container']}>
+          <li>
+            <StyledLink to="" end>
+              Features
+            </StyledLink>
+          </li>
+          <li>
+            <StyledLink to="reviews">Reviews</StyledLink>
+          </li>
+        </ul>
+        <div className={css['navigation-line']}></div>
+      </nav>
     </>
   );
 };

@@ -1,13 +1,17 @@
 import CategoriesItemList from 'components/CategoriesItemList/CategoriesItemList';
 import { useSelector } from 'react-redux';
-import { selectInfoModalDetails } from '../../redux/selectors';
+import { selectModalCamper } from '../../redux/selectors';
 import css from './Features.module.css';
 
 const Features = () => {
-  const dataDetailsInfo = useSelector(selectInfoModalDetails);
+  const camper = useSelector(selectModalCamper);
+
+  if (!camper) {
+    return null;
+  }
 
   const { adults, details, form, length, width, height, tank, consumption } =
-    dataDetailsInfo[0];
+    camper;
   const {
     airConditioner,
     microwave,

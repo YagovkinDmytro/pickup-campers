@@ -12,7 +12,13 @@ root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <React.StrictMode>
-        <BrowserRouter basename="/pickup-campers">
+        <BrowserRouter
+          basename="/pickup-campers"
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
           <App />
         </BrowserRouter>
       </React.StrictMode>

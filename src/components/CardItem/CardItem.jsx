@@ -90,8 +90,8 @@ const CardItem = () => {
               />
             </div>
           </div>
-          <Link to={'/catalog/feature'}>
-            <ButtonCardItems id={_id} type="button" variant="button-show-more">
+          <Link to={`/catalog/${_id}`}>
+            <ButtonCardItems type="button" variant="button-show-more">
               Show more
             </ButtonCardItems>
           </Link>

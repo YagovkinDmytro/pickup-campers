@@ -5,6 +5,7 @@ import Reviews from 'pages/Reviews/Reviews';
 import Section from 'components/Section/Section';
 import { Suspense, lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import ModalCardDetails from 'components/ModalCardDetails/ModalCardDetails';
 
 const HomePage = lazy(() => import('pages/Home/Home'));
 const CampersPage = lazy(() => import('pages/Campers/Campers'));
@@ -17,12 +18,19 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navigation />}>
             <Route index element={<HomePage />} />
-            <Route path="catalog" element={<CampersPage />}>
-              <Route path="/catalog/feature" element={<Features />} />
-              <Route path="/catalog/reviews" element={<Reviews />} />
+
+            <Route path="/catalog" element={<CampersPage />}>
+              <Route path=":id" element={<ModalCardDetails />}>
+                <Route index element={<Features />} />
+                <Route path="feature" element={<Features />} />
+                <Route path="reviews" element={<Reviews />} />
+              </Route>
             </Route>
+
             <Route path="favorites" element={<Favorites />} />
           </Route>
+
+          {/* <Route path="*" element={<NotFound />} /> */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Section>

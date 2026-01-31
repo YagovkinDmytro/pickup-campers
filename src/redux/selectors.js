@@ -8,8 +8,6 @@ export const selectError = state => state.campers.campers.error;
 
 export const selectCardDetailsPage = state => state.campers.campers.page;
 
-export const selectCloseModal = state => state.details.details.closeModal;
-
 export const selectModalCardDetailsId = state => state.details.details.id;
 
 export const selectfavoritesIdArr = state => state.favorites.favoritesId;
@@ -56,9 +54,9 @@ export const selectInfoCardCampers = createSelector(
   }
 );
 
-export const selectInfoModalDetails = createSelector(
+export const selectModalCamper = createSelector(
   [selectCampers, selectModalCardDetailsId],
   (campers, CardId) => {
-    return campers.filter(camper => camper['_id'] === CardId);
+    return campers.find(camper => camper['_id'] === CardId) || null;
   }
 );

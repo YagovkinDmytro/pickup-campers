@@ -1,12 +1,17 @@
 import css from './reviews.module.css';
 import { ReactComponent as Star } from '../../images/icons/star.svg';
-import { selectInfoModalDetails } from '../../redux/selectors';
+import { selectModalCamper } from '../../redux/selectors';
 import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 
 const Reviews = () => {
-  const dataDetailsInfo = useSelector(selectInfoModalDetails);
-  const { reviews } = dataDetailsInfo[0];
+  const camper = useSelector(selectModalCamper);
+
+  if (!camper) {
+    return null;
+  }
+
+  const { reviews } = camper;
 
   return reviews.map(({ reviewer_name, reviewer_rating, comment }) => {
     const capitalizedLetter = reviewer_name.charAt(0).toUpperCase();

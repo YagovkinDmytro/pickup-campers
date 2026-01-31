@@ -1,15 +1,11 @@
 import CardList from 'components/CardList/CardList';
-import ModalCardDatails from 'components/ModalCardDetails/ModalCardDetails';
-import { useSelector } from 'react-redux';
-import { selectCloseModal } from '../../redux/selectors';
+import { Outlet } from 'react-router-dom';
 
 const CampersPage = () => {
-  const openModal = useSelector(selectCloseModal);
-
   return (
     <div>
       <CardList />
-      {openModal && <ModalCardDatails />}
+      <Outlet />
     </div>
   );
 };

@@ -10,6 +10,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import NavigationDetails from 'components/NavigationDetails/NavigationDetails';
 import BookingForm from 'components/BookingForm/BookingForm';
+import FocusLock from 'react-focus-lock';
 
 const ModalCardDetails = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,13 @@ const ModalCardDetails = () => {
     };
   }, [id, dispatch, navigate]);
 
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   const camper = useSelector(selectModalCamper);
 
   if (!camper) {
@@ -38,67 +46,74 @@ const ModalCardDetails = () => {
   const { name, price, rating, reviews, location, description, gallery } =
     camper;
 
-  const handleCloseModal = evt => {
+  const handleCloseModal = e => {
     if (
-      evt.target.className === 'overlay' ||
-      evt.currentTarget.name === 'close-button'
+      e.target === e.currentTarget ||
+      e.currentTarget.name === 'close-button'
     ) {
       navigate('/catalog');
     }
   };
 
   return (
-    <div className={css['overlay']} onClick={handleCloseModal}>
-      <div className={css['modal']} onClick={e => e.stopPropagation()}>
-        <div className={css['title']}>
-          <h2>{name}</h2>
-          <button
-            name="close-button"
-            type="button"
-            className={css['close-modal-button']}
-            onClick={handleCloseModal}
-          >
-            <CloseIcon width={32} height={32} />
-          </button>
-        </div>
-        <div className={css['thumb-stars-location']}>
-          <div className={css['star']}>
-            <Star width={16} height={16} />
-            <p>
-              {rating} ({reviews.length} Reviews)
-            </p>
+    <FocusLock>
+      <div
+        className={css['overlay']}
+        role="dialog"
+        aria-modal="true"
+        onClick={handleCloseModal}
+      >
+        <div className={css['modal']} onClick={e => e.stopPropagation()}>
+          <div className={css['title']}>
+            <h2>{name}</h2>
+            <button
+              name="close-button"
+              type="button"
+              className={css['close-modal-button']}
+              onClick={handleCloseModal}
+            >
+              <CloseIcon width={32} height={32} />
+            </button>
           </div>
-          <div className={css['location']}>
-            <Location width={16} height={16} />
-            <p>{location}</p>
+          <div className={css['thumb-stars-location']}>
+            <div className={css['star']}>
+              <Star width={16} height={16} />
+              <p>
+                {rating} ({reviews.length} Reviews)
+              </p>
+            </div>
+            <div className={css['location']}>
+              <Location width={16} height={16} />
+              <p>{location}</p>
+            </div>
           </div>
-        </div>
-        <h2 className={css['price-item']}>€{price},00</h2>
-        <ul className={css['thumb-card-picture']}>
-          {gallery.map(cardPicture => (
-            <li key={nanoid()}>
-              <img
-                className={css['card-picture']}
-                src={cardPicture}
-                alt="camper"
-                width={290}
-                height={310}
-              />
-            </li>
-          ))}
-        </ul>
-        <div className={css['info']}>
-          <p className={css['description']}>{description}</p>
-        </div>
-        <NavigationDetails />
-        <div className={css['info-form-container']}>
-          <div>
-            <Outlet />
+          <h2 className={css['price-item']}>€{price},00</h2>
+          <ul className={css['thumb-card-picture']}>
+            {gallery.map(cardPicture => (
+              <li key={nanoid()}>
+                <img
+                  className={css['card-picture']}
+                  src={cardPicture}
+                  alt="camper"
+                  width={290}
+                  height={310}
+                />
+              </li>
+            ))}
+          </ul>
+          <div className={css['info']}>
+            <p className={css['description']}>{description}</p>
           </div>
-          <BookingForm />
+          <NavigationDetails />
+          <div className={css['info-form-container']}>
+            <div>
+              <Outlet />
+            </div>
+            <BookingForm />
+          </div>
         </div>
       </div>
-    </div>
+    </FocusLock>
   );
 };
 

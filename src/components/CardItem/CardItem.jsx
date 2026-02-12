@@ -1,24 +1,21 @@
 import { ReactComponent as Hart } from '../../images/icons/hart.svg';
 import { ReactComponent as Star } from '../../images/icons/star.svg';
 import { ReactComponent as Location } from '../../images/icons/map-pin.svg';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectInfoCardCampers } from '../../redux/selectors';
+import { useDispatch } from 'react-redux';
 import CategoriesItemList from 'components/CategoriesItemList/CategoriesItemList';
 import ButtonCardItems from 'components/ButtonCardItems/ButtonCardItems';
 import css from './CardItem.module.css';
 import { addFavoriteCardId } from '../../redux/favoritesSlice';
 import { Link } from 'react-router-dom';
 
-const CardItem = () => {
-  const infoCardCampers = useSelector(selectInfoCardCampers);
-
+const CardItem = ({ campers }) => {
   const dispatch = useDispatch();
 
   const handleFavorite = id => {
     dispatch(addFavoriteCardId(id));
   };
 
-  return infoCardCampers.map(
+  return campers.map(
     ({
       _id,
       cardPicture,

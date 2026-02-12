@@ -1,0 +1,38 @@
+.selectContainer {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.selectLabel {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(16, 24, 40, 0.6);
+}
+
+.selectLocation {
+  appearance: none;
+  background-color: rgba(247, 247, 247, 1);
+  border-radius: 10px;
+  padding: 18px;
+  padding-left: 36px;
+  border: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+}
+
+.selectContainer::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 67%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: url('../../images/icons/map-pin.svg') no-repeat center;
+  background-size: contain;
+}

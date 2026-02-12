@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCampers } from '../../redux/operations';
+import { fetchCampersAll } from '../../redux/operations';
 import {
-  selectCampers,
   selectError,
   selectIsLoading,
+  selectVisibleCampers,
 } from '../../redux/selectors';
 import { useEffect } from 'react';
 import CardItem from '../CardItem/CardItem';
@@ -13,12 +13,12 @@ import css from './CardList.module.css';
 
 const CardList = () => {
   const dispatch = useDispatch();
-  const campers = useSelector(selectCampers);
+  const campers = useSelector(selectVisibleCampers);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
   useEffect(() => {
-    dispatch(fetchCampers());
+    dispatch(fetchCampersAll());
   }, [dispatch]);
 
   return (
@@ -26,7 +26,7 @@ const CardList = () => {
       {isLoading && <Loader />}
       {error && <h1>{error}</h1>}
       <ul className={css['card-list']}>
-        {campers && campers.length > 0 && <CardItem />}
+        {campers && campers.length > 0 && <CardItem campers={campers} />}
       </ul>
       {campers.length <= 12 && (
         <ButtonCardItems type="button" variant="button-load-more">

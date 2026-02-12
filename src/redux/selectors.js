@@ -6,6 +6,10 @@ export const selectIsLoading = state => state.campers.campers.isloading;
 
 export const selectError = state => state.campers.campers.error;
 
+export const selectFilters = state => state.campers.campers.filters;
+
+export const selectLocation = state => state.campers.campers.filters.location;
+
 export const selectCardDetailsPage = state => state.campers.campers.page;
 
 export const selectModalCardDetailsId = state => state.details.details.id;
@@ -58,5 +62,28 @@ export const selectModalCamper = createSelector(
   [selectCampers, selectModalCardDetailsId],
   (campers, CardId) => {
     return campers.find(camper => camper['_id'] === CardId) || null;
+  }
+);
+
+export const selectLocationList = createSelector([selectCampers], campers => {
+  const locationList = campers.map(({ location }) => {
+    return location;
+  });
+  const uniqueCities = [...new Set(locationList)];
+  return uniqueCities;
+});
+
+export const selectVisibleCampers = createSelector(
+  [selectInfoCardCampers, selectLocation],
+  (campers = [], location) => {
+    if (!location) {
+      return campers;
+    }
+
+    if (location) {
+      return (campers = campers.filter(c => c.location.includes(location)));
+    }
+
+    return campers;
   }
 );

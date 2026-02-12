@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCampers, fetchLoadMore } from './operations';
+import { fetchCampersAll, fetchLoadMore } from './operations';
 
 const handlePending = state => {
   state.campers.isLoading = true;
@@ -11,26 +11,38 @@ const handleRejected = (state, { payload }) => {
 };
 
 const campersInitialState = {
-  campers: { items: [], isLoading: false, error: null, page: 1 },
+  campers: {
+    items: [],
+    isLoading: false,
+    error: null,
+    filters: {
+      location: '',
+    },
+    page: 1,
+    limit: 4,
+  },
 };
 
 const campersSlice = createSlice({
-  name: 'campers',
+  name: 'campersAll',
   initialState: campersInitialState,
   reducers: {
     setPage: (state, { payload }) => {
       state.campers.page = payload;
     },
+    setLocation: (state, { payload }) => {
+      state.campers.filters.location = payload;
+    },
   },
   extraReducers: builder => {
     builder
-      .addCase(fetchCampers.pending, handlePending)
-      .addCase(fetchCampers.fulfilled, (state, { payload }) => {
+      .addCase(fetchCampersAll.pending, handlePending)
+      .addCase(fetchCampersAll.fulfilled, (state, { payload }) => {
         state.campers.isLoading = false;
         state.campers.error = null;
         state.campers.items = payload;
       })
-      .addCase(fetchCampers.rejected, handleRejected)
+      .addCase(fetchCampersAll.rejected, handleRejected)
       .addCase(fetchLoadMore.pending, handlePending)
       .addCase(fetchLoadMore.fulfilled, (state, { payload }) => {
         state.campers.isLoading = false;
@@ -41,5 +53,5 @@ const campersSlice = createSlice({
   },
 });
 
-export const { setPage } = campersSlice.actions;
+export const { setPage, setLocation } = campersSlice.actions;
 export const campersSliceReducer = campersSlice.reducer;

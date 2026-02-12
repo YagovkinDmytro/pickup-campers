@@ -3,6 +3,18 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://663d2e8117145c4d8c38f05c.mockapi.io';
 
+export const fetchCampersAll = createAsyncThunk(
+  'campersAll',
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get(`/campers`);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 export const fetchCampers = createAsyncThunk('campers', async (_, thunkAPI) => {
   try {
     const params = new URLSearchParams({

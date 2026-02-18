@@ -1,0 +1,21 @@
+.container {
+  margin-bottom: 32px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: rgba(16, 24, 40, 1);
+}
+
+.line {
+  border-top: 1px solid rgba(16, 24, 40, 0.1);
+  margin: 24px 0px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 8px;
+}

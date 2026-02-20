@@ -15,25 +15,12 @@ const campersInitialState = {
     items: [],
     isLoading: false,
     error: null,
-    filters: {
-      location: '',
-    },
-    page: 1,
-    limit: 4,
   },
 };
 
 const campersSlice = createSlice({
   name: 'campersAll',
   initialState: campersInitialState,
-  reducers: {
-    setPage: (state, { payload }) => {
-      state.campers.page = payload;
-    },
-    setLocation: (state, { payload }) => {
-      state.campers.filters.location = payload;
-    },
-  },
   extraReducers: builder => {
     builder
       .addCase(fetchCampersAll.pending, handlePending)
@@ -53,5 +40,4 @@ const campersSlice = createSlice({
   },
 });
 
-export const { setPage, setLocation } = campersSlice.actions;
 export const campersSliceReducer = campersSlice.reducer;

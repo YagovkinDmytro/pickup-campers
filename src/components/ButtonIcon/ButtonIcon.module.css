@@ -13,3 +13,11 @@
   justify-content: center;
   gap: 8px;
 }
+
+.container:hover {
+  border: 1px solid rgba(228, 72, 72, 1);
+}
+
+.active {
+  border: 1px solid rgba(228, 72, 72, 1);
+}

@@ -14,5 +14,5 @@ const details = createSlice({
   },
 });
 
-export const { setModal, setModalCardDetailsId } = details.actions;
-export const modalCardDetailsReduser = details.reducer;
+export const { setModalCardDetailsId } = details.actions;
+export const modalCardDetailsSliceReducer = details.reducer;

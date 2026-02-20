@@ -1,5 +1,6 @@
 import { campersSliceReducer } from './campersSlice';
-import { modalCardDetailsReduser } from './ModalCardDetailsSlice';
+import { modalCardDetailsSliceReducer } from './modalCardDetailsSlice';
+import { filtersSliceReducer } from './filtersSlice';
 import { favoritesReducer } from './favoritesSlice';
 
 import { persistReducer } from 'redux-persist';
@@ -15,6 +16,7 @@ const persistedReducer = persistReducer(persistConfig, favoritesReducer);
 
 export const rootReducer = {
   campers: campersSliceReducer,
-  details: modalCardDetailsReduser,
+  details: modalCardDetailsSliceReducer,
+  filters: filtersSliceReducer,
   favorites: persistedReducer,
 };

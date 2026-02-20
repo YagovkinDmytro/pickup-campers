@@ -1,7 +1,7 @@
 import css from './SelectLocation.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectLocation, selectLocationList } from '../../redux/selectors';
-import { setLocation } from '../../redux/campersSlice';
+import { setLocation } from '../../redux/filtersSlice';
 
 const SelectLocation = () => {
   const dispatch = useDispatch();

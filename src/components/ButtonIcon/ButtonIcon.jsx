@@ -1,8 +1,13 @@
 import css from './ButtonIcon.module.css';
+import cn from 'utils/class-names';
 
-const ButtonIcon = ({ id, type, children }) => {
+const ButtonIcon = ({ type, className, active, onClick, children }) => {
   return (
-    <button id={id} type={type} className={css.container} onClick={() => {}}>
+    <button
+      type={type}
+      className={cn(css.container, className, { [css.active]: active })}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

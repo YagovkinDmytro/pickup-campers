@@ -6,11 +6,13 @@ export const selectIsLoading = state => state.campers.campers.isloading;
 
 export const selectError = state => state.campers.campers.error;
 
-export const selectFilters = state => state.campers.campers.filters;
+export const selectFilters = state => state.filters.filters;
 
-export const selectLocation = state => state.campers.campers.filters.location;
+export const selectFeatures = state => state.filters.filters.features;
 
-export const selectCardDetailsPage = state => state.campers.campers.page;
+export const selectLocation = state => state.filters.filters.location;
+
+export const selectCardDetailsPage = state => state.filters.page;
 
 export const selectModalCardDetailsId = state => state.details.details.id;
 
@@ -33,6 +35,7 @@ export const selectInfoCardCampers = createSelector(
         engine,
         transmission,
         details,
+        form,
       }) => {
         const cardPicture = gallery[0];
         const { kitchen, beds, airConditioner } = details;
@@ -51,6 +54,8 @@ export const selectInfoCardCampers = createSelector(
           kitchen,
           beds,
           airConditioner,
+          details,
+          form,
         };
         return infoCardCampers;
       }
@@ -74,16 +79,25 @@ export const selectLocationList = createSelector([selectCampers], campers => {
 });
 
 export const selectVisibleCampers = createSelector(
-  [selectInfoCardCampers, selectLocation],
-  (campers = [], location) => {
-    if (!location) {
-      return campers;
-    }
+  [selectInfoCardCampers, selectLocation, selectFilters],
+  (campers, location, filters) => {
+    let result = [...campers];
 
     if (location) {
-      return (campers = campers.filter(c => c.location.includes(location)));
+      result = result.filter(camper => camper.location === location);
     }
 
-    return campers;
+    if (filters.transmission) {
+      result = result.filter(
+        camper => camper.transmission === filters.transmission
+      );
+    }
+
+    if (filters.engine) {
+      result = result.filter(camper => camper.engine === filters.engine);
+    }
+
+    console.log(result);
+    return result;
   }
 );

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './ButtonCardItems.module.css';
 import { selectCardDetailsPage } from '../../redux/selectors';
-import { setPage } from '../../redux/campersSlice';
+import { setPage } from '../../redux/filtersSlice';
 import { fetchLoadMore } from '../../redux/operations';
 
 const ButtonCardItems = ({ id, type, variant, children }) => {

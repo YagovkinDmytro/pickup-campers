@@ -22,6 +22,7 @@ const Features = () => {
     radio,
     shower,
     hob,
+    gas,
   } = details;
 
   return (
@@ -38,6 +39,7 @@ const Features = () => {
           radio={radio}
           shower={shower}
           hob={hob}
+          gas={gas}
         />
       </div>
       <div>
@@ -62,6 +64,10 @@ const Features = () => {
         <div className={css['text-info']}>
           <p>Tank</p>
           <p>{tank}</p>
+        </div>
+        <div className={css['text-info']}>
+          <p>Gas</p>
+          {gas ? <p>{gas}</p> : <p>---</p>}
         </div>
         <div className={css['text-info']}>
           <p>Consumption</p>

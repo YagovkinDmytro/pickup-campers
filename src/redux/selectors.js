@@ -8,8 +8,6 @@ export const selectError = state => state.campers.campers.error;
 
 export const selectFilters = state => state.filters.filters;
 
-export const selectFeatures = state => state.filters.filters.features;
-
 export const selectLocation = state => state.filters.filters.location;
 
 export const selectCardDetailsPage = state => state.filters.page;
@@ -97,7 +95,21 @@ export const selectVisibleCampers = createSelector(
       result = result.filter(camper => camper.engine === filters.engine);
     }
 
-    console.log(result);
+    if (filters.gas) {
+      result = result.filter(camper => camper.details.gas !== '');
+    }
+
+    if (filters.features.length > 0) {
+      result = result.filter(camper =>
+        filters.features.every(feature => {
+          if (typeof camper.details[feature] === 'number') {
+            return camper.details[feature] > 0;
+          }
+          return false;
+        })
+      );
+    }
+
     return result;
   }
 );

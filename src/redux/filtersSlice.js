@@ -5,6 +5,7 @@ const filtersInitialState = {
     location: '',
     transmission: '',
     engine: '',
+    gas: '',
     features: [],
   },
   page: 1,
@@ -37,6 +38,9 @@ const filtersSlice = createSlice({
     setEngine(state, { payload }) {
       state.filters.engine = state.filters.engine === payload ? '' : payload;
     },
+    setGas(state, { payload }) {
+      state.filters.gas = state.filters.gas === payload ? '' : payload;
+    },
     resetFilters() {
       return filtersInitialState;
     },
@@ -49,6 +53,7 @@ export const {
   toggleFeature,
   setTransmission,
   setEngine,
+  setGas,
   resetFilters,
 } = filtersSlice.actions;
 export const filtersSliceReducer = filtersSlice.reducer;

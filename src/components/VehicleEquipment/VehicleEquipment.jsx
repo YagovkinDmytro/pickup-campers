@@ -1,64 +1,66 @@
 import ButtonIcon from 'components/ButtonIcon/ButtonIcon';
 import css from './VehicleEquipment.module.css';
-import { ReactComponent as Transmission } from '../../images/icons/transmission.svg';
-import { ReactComponent as AC } from '../../images/icons/air-conditioner.svg';
-import { ReactComponent as Kitchen } from '../../images/icons/canteen.svg';
-import { ReactComponent as Gas } from '../../images/icons/gas-station.svg';
-import { ReactComponent as Bed } from '../../images/icons/bed.svg';
-import { ReactComponent as TvIcon } from '../../images/icons/tv.svg';
+
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFeatures } from '../../redux/selectors';
 import {
   setEngine,
   setTransmission,
+  setGas,
   toggleFeature,
 } from '../../redux/filtersSlice';
+import { FILTER_BUTTONS } from 'configs/filtersConfig';
+import { selectFilters } from '../../redux/selectors';
 
 const VehicleEquipment = () => {
-  const selectedFeatures = useSelector(selectFeatures);
+  const selectedFilters = useSelector(selectFilters);
   const dispatch = useDispatch();
 
-  const handleFeatures = (key, value) => {
-    if (key === 'transmission') {
-      dispatch(setTransmission(value));
+  const isActive = item => {
+    if (item.type === 'single') {
+      return selectedFilters[item.key] === item.value;
     }
-    if (key === 'engine') {
-      dispatch(setEngine(value));
+
+    if (item.type === 'multi') {
+      return selectedFilters.features.includes(item.key);
     }
-    dispatch(toggleFeature(key));
+
+    return false;
   };
 
-  const FEATURES = [
-    {
-      key: 'transmission',
-      value: 'automatic',
-      label: 'Automatic',
-      Icon: Transmission,
-    },
-    { key: 'engine', value: 'diesel', label: 'Diesel', Icon: Gas },
-    { key: 'airConditioner', label: 'AC', Icon: AC },
-    { key: 'beds', label: 'Bed', Icon: Bed },
-    { key: 'kitchen', label: 'Kitchen', Icon: Kitchen },
-    { key: 'tv', label: 'TV', Icon: TvIcon },
-  ];
+  const handleClick = item => {
+    if (item.type === 'single') {
+      if (item.key === 'transmission') {
+        dispatch(setTransmission(item.value));
+      }
+      if (item.key === 'engine') {
+        dispatch(setEngine(item.value));
+      }
+      if (item.key === 'gas') {
+        dispatch(setGas(item.value));
+      }
+    }
+
+    if (item.type === 'multi') {
+      dispatch(toggleFeature(item.key));
+    }
+  };
 
   return (
     <div className={css.container}>
       <h3 className={css.title}>Vehicle Equipment</h3>
       <div className={css.line}></div>
       <ul className={css.list}>
-        {FEATURES.map(({ key, value, label, Icon }) => (
-          <li key={key}>
+        {FILTER_BUTTONS.map(item => (
+          <li key={item.key}>
             <ButtonIcon
               type="button"
-              active={selectedFeatures.includes(key)}
-              value={value}
+              active={isActive(item)}
               onClick={() => {
-                handleFeatures(key, value);
+                handleClick(item);
               }}
             >
-              <Icon width={32} height={32} />
-              {label}
+              <item.Icon width={32} height={32} />
+              {item.label}
             </ButtonIcon>
           </li>
         ))}

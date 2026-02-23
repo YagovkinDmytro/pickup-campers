@@ -110,6 +110,10 @@ export const selectVisibleCampers = createSelector(
       );
     }
 
+    if (filters.form.length > 0) {
+      result = result.filter(camper => camper.form === filters.form);
+    }
+
     return result;
   }
 );

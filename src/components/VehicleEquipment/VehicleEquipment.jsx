@@ -8,7 +8,7 @@ import {
   setGas,
   toggleFeature,
 } from '../../redux/filtersSlice';
-import { FILTER_BUTTONS } from 'configs/filtersConfig';
+import { VEHICLE_EQUIPMENT_BUTTONS } from 'configs/filtersConfig';
 import { selectFilters } from '../../redux/selectors';
 
 const VehicleEquipment = () => {
@@ -50,7 +50,7 @@ const VehicleEquipment = () => {
       <h3 className={css.title}>Vehicle Equipment</h3>
       <div className={css.line}></div>
       <ul className={css.list}>
-        {FILTER_BUTTONS.map(item => (
+        {VEHICLE_EQUIPMENT_BUTTONS.map(item => (
           <li key={item.key}>
             <ButtonIcon
               type="button"

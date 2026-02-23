@@ -7,8 +7,11 @@ import { ReactComponent as Gas } from '../images/icons/gas.svg';
 import { ReactComponent as Shower } from '../images/icons/shower.svg';
 import { ReactComponent as Freezer } from '../images/icons/freezer.svg';
 import { ReactComponent as Toilet } from '../images/icons/toilet-paper.svg';
+import { ReactComponent as Van } from '../images/icons/van-Button.svg';
+import { ReactComponent as FullyIntegrated } from '../images/icons/fullyIntegrated-Button.svg';
+import { ReactComponent as Alcove } from '../images/icons/alcove-Button.svg';
 
-export const FILTER_BUTTONS = [
+export const VEHICLE_EQUIPMENT_BUTTONS = [
   {
     type: 'single',
     key: 'transmission',
@@ -30,4 +33,14 @@ export const FILTER_BUTTONS = [
   { type: 'multi', key: 'toilet', label: 'Toilet', Icon: Toilet },
   { type: 'multi', key: 'freezer', label: 'Freezer', Icon: Freezer },
   { type: 'single', key: 'gas', value: 'gas', label: 'Gas', Icon: Gas },
+];
+
+export const VEHICLE_TYPE_BUTTONS = [
+  { key: 'panelTruck', label: 'Van', Icon: Van },
+  {
+    key: 'fullyIntegrated',
+    label: 'Fully Integrated',
+    Icon: FullyIntegrated,
+  },
+  { key: 'alcove', label: 'Alcove', Icon: Alcove },
 ];

@@ -1,33 +1,42 @@
 import ButtonIcon from 'components/ButtonIcon/ButtonIcon';
 import css from './VehicleType.module.css';
-import { ReactComponent as Van } from '../../images/icons/van-Button.svg';
-import { ReactComponent as FullyIntegrated } from '../../images/icons/fullyIntegrated-Button.svg';
-import { ReactComponent as Alcove } from '../../images/icons/alcove-Button.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { setVehicleType } from '../../redux/filtersSlice';
+import { selectFilters } from '../../redux/selectors';
+import { VEHICLE_TYPE_BUTTONS } from 'configs/filtersConfig';
 
 const VehicleType = () => {
+  const selectedFilters = useSelector(selectFilters);
+
+  const dispatch = useDispatch();
+
+  const isActive = item => {
+    return selectedFilters.form.includes(item.key);
+  };
+
+  const handleClick = item => {
+    dispatch(setVehicleType(item.key));
+  };
+
   return (
     <div>
       <h3 className={css.title}>Vehicle Equipment</h3>
       <div className={css.line}></div>
       <ul className={css.list}>
-        <li>
-          <ButtonIcon>
-            <Van width={40} height={28} />
-            Van
-          </ButtonIcon>
-        </li>
-        <li>
-          <ButtonIcon>
-            <FullyIntegrated width={40} height={28} />
-            Fully Integrated
-          </ButtonIcon>
-        </li>
-        <li>
-          <ButtonIcon>
-            <Alcove width={40} height={28} />
-            Alcove
-          </ButtonIcon>
-        </li>
+        {VEHICLE_TYPE_BUTTONS.map(item => (
+          <li key={item.key}>
+            <ButtonIcon
+              type="button"
+              active={isActive(item)}
+              onClick={() => {
+                handleClick(item);
+              }}
+            >
+              <item.Icon width={40} height={28} />
+              {item.label}
+            </ButtonIcon>
+          </li>
+        ))}
       </ul>
     </div>
   );

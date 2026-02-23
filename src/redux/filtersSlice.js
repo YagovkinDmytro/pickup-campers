@@ -7,6 +7,7 @@ const filtersInitialState = {
     engine: '',
     gas: '',
     features: [],
+    form: '',
   },
   page: 1,
   limit: 4,
@@ -41,6 +42,9 @@ const filtersSlice = createSlice({
     setGas(state, { payload }) {
       state.filters.gas = state.filters.gas === payload ? '' : payload;
     },
+    setVehicleType(state, { payload }) {
+      state.filters.form = state.filters.form === payload ? '' : payload;
+    },
     resetFilters() {
       return filtersInitialState;
     },
@@ -54,6 +58,7 @@ export const {
   setTransmission,
   setEngine,
   setGas,
+  setVehicleType,
   resetFilters,
 } = filtersSlice.actions;
 export const filtersSliceReducer = filtersSlice.reducer;

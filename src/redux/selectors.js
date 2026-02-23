@@ -77,43 +77,26 @@ export const selectLocationList = createSelector([selectCampers], campers => {
 });
 
 export const selectVisibleCampers = createSelector(
-  [selectInfoCardCampers, selectLocation, selectFilters],
-  (campers, location, filters) => {
+  [selectInfoCardCampers, selectFilters],
+  (campers, filters) => {
     let result = [...campers];
 
-    if (location) {
-      result = result.filter(camper => camper.location === location);
-    }
+    const makePredicates = f => [
+      camper => !f.location || camper.location === f.location,
+      camper => !f.transmission || camper.transmission === f.transmission,
+      camper => !f.engine || camper.engine === f.engine,
+      camper => !f.gas || camper.details.gas !== '',
+      camper =>
+        f.features.length === 0 ||
+        f.features.every(feat => camper.details[feat] > 0),
+      camper => !f.form || camper.form === f.form,
+    ];
 
-    if (filters.transmission) {
-      result = result.filter(
-        camper => camper.transmission === filters.transmission
-      );
-    }
+    const applyFilters = (campers, filters) => {
+      const predicates = makePredicates(filters);
+      return campers.filter(camper => predicates.every(p => p(camper)));
+    };
 
-    if (filters.engine) {
-      result = result.filter(camper => camper.engine === filters.engine);
-    }
-
-    if (filters.gas) {
-      result = result.filter(camper => camper.details.gas !== '');
-    }
-
-    if (filters.features.length > 0) {
-      result = result.filter(camper =>
-        filters.features.every(feature => {
-          if (typeof camper.details[feature] === 'number') {
-            return camper.details[feature] > 0;
-          }
-          return false;
-        })
-      );
-    }
-
-    if (filters.form.length > 0) {
-      result = result.filter(camper => camper.form === filters.form);
-    }
-
-    return result;
+    return applyFilters(result, filters);
   }
 );

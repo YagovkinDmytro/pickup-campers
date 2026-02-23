@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/pickup-campers/static/css/main.46a386f6.css",
-    "main.js": "/pickup-campers/static/js/main.11c12439.js",
+    "main.js": "/pickup-campers/static/js/main.8fc608bd.js",
     "static/css/590.d16d3e31.chunk.css": "/pickup-campers/static/css/590.d16d3e31.chunk.css",
     "static/js/590.33946018.chunk.js": "/pickup-campers/static/js/590.33946018.chunk.js",
     "static/css/460.1804719b.chunk.css": "/pickup-campers/static/css/460.1804719b.chunk.css",
-    "static/js/460.1779e3a1.chunk.js": "/pickup-campers/static/js/460.1779e3a1.chunk.js",
+    "static/js/460.ae7712f8.chunk.js": "/pickup-campers/static/js/460.ae7712f8.chunk.js",
     "static/js/500.4d99016e.chunk.js": "/pickup-campers/static/js/500.4d99016e.chunk.js",
     "static/media/camper-home.jpg": "/pickup-campers/static/media/camper-home.843d3a449e7d08190f86.jpg",
     "static/media/air-conditioner.svg": "/pickup-campers/static/media/air-conditioner.30359f91c90be666587d1f85da42b110.svg",
@@ -32,15 +32,15 @@
     "static/media/canteen.svg": "/pickup-campers/static/media/canteen.afe6130490e04e1ebb0a3c725651ff4c.svg",
     "static/media/close.svg": "/pickup-campers/static/media/close.1df64f5d1ae58ecfd7e32e5452c329fd.svg",
     "main.46a386f6.css.map": "/pickup-campers/static/css/main.46a386f6.css.map",
-    "main.11c12439.js.map": "/pickup-campers/static/js/main.11c12439.js.map",
+    "main.8fc608bd.js.map": "/pickup-campers/static/js/main.8fc608bd.js.map",
     "590.d16d3e31.chunk.css.map": "/pickup-campers/static/css/590.d16d3e31.chunk.css.map",
     "590.33946018.chunk.js.map": "/pickup-campers/static/js/590.33946018.chunk.js.map",
     "460.1804719b.chunk.css.map": "/pickup-campers/static/css/460.1804719b.chunk.css.map",
-    "460.1779e3a1.chunk.js.map": "/pickup-campers/static/js/460.1779e3a1.chunk.js.map",
+    "460.ae7712f8.chunk.js.map": "/pickup-campers/static/js/460.ae7712f8.chunk.js.map",
     "500.4d99016e.chunk.js.map": "/pickup-campers/static/js/500.4d99016e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.46a386f6.css",
-    "static/js/main.11c12439.js"
+    "static/js/main.8fc608bd.js"
   ]
 }

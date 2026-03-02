@@ -10,7 +10,9 @@ export const selectFilters = state => state.filters.filters;
 
 export const selectLocation = state => state.filters.filters.location;
 
-export const selectCardDetailsPage = state => state.filters.page;
+export const selectCampersPage = state => state.filters.page;
+
+export const selectCampersLimit = state => state.filters.limit;
 
 export const selectModalCardDetailsId = state => state.details.details.id;
 
@@ -76,7 +78,7 @@ export const selectLocationList = createSelector([selectCampers], campers => {
   return uniqueCities;
 });
 
-export const selectVisibleCampers = createSelector(
+export const selectFilteredCampers = createSelector(
   [selectInfoCardCampers, selectFilters],
   (campers, filters) => {
     let result = [...campers];
@@ -98,5 +100,13 @@ export const selectVisibleCampers = createSelector(
     };
 
     return applyFilters(result, filters);
+  }
+);
+
+export const selectVisibleCampers = createSelector(
+  [selectFilteredCampers, selectCampersPage, selectCampersLimit],
+  (filtered, page, limit) => {
+    const visible = filtered.slice(0, page * limit);
+    return visible;
   }
 );

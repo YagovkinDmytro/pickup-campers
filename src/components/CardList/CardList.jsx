@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCampersAll } from '../../redux/operations';
 import {
+  selectCampersLimit,
+  selectCampersPage,
   selectError,
   selectIsLoading,
   selectVisibleCampers,
@@ -10,6 +12,7 @@ import CardItem from '../CardItem/CardItem';
 import Loader from 'components/Loader/Loader';
 import ButtonCardItems from 'components/ButtonCardItems/ButtonCardItems';
 import css from './CardList.module.css';
+import { setPage } from '../../redux/filtersSlice';
 
 const CardList = () => {
   const dispatch = useDispatch();
@@ -21,6 +24,13 @@ const CardList = () => {
     dispatch(fetchCampersAll());
   }, [dispatch]);
 
+  const page = useSelector(selectCampersPage);
+  const limit = useSelector(selectCampersLimit);
+
+  const handleClick = () => {
+    dispatch(setPage(page + 1));
+  };
+
   return (
     <div className={css['card-list-container']}>
       {isLoading && <Loader />}
@@ -28,8 +38,12 @@ const CardList = () => {
       <ul className={css['card-list']}>
         {campers && campers.length > 0 && <CardItem campers={campers} />}
       </ul>
-      {campers.length <= 12 && (
-        <ButtonCardItems type="button" variant="button-load-more">
+      {campers.length >= page * limit && (
+        <ButtonCardItems
+          type="button"
+          variant="button-load-more"
+          onClick={handleClick}
+        >
           Load more
         </ButtonCardItems>
       )}

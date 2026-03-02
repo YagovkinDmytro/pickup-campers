@@ -22,6 +22,7 @@ const filtersSlice = createSlice({
     },
     setLocation: (state, { payload }) => {
       state.filters.location = payload;
+      state.page = 1;
     },
     toggleFeature(state, { payload }) {
       if (state.filters.features.includes(payload)) {
@@ -31,19 +32,24 @@ const filtersSlice = createSlice({
       } else {
         state.filters.features.push(payload);
       }
+      state.page = 1;
     },
     setTransmission(state, { payload }) {
       state.filters.transmission =
         state.filters.transmission === payload ? '' : payload;
+      state.page = 1;
     },
     setEngine(state, { payload }) {
       state.filters.engine = state.filters.engine === payload ? '' : payload;
+      state.page = 1;
     },
     setGas(state, { payload }) {
       state.filters.gas = state.filters.gas === payload ? '' : payload;
+      state.page = 1;
     },
     setVehicleType(state, { payload }) {
       state.filters.form = state.filters.form === payload ? '' : payload;
+      state.page = 1;
     },
     resetFilters() {
       return filtersInitialState;

@@ -1,12 +1,4 @@
-.title {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  color: rgba(16, 24, 40, 0.6);
-  margin-bottom: 14px;
-}
-
-.filterContainer {
+.container {
   display: flex;
   gap: 64px;
 }

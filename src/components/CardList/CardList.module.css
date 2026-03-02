@@ -1,4 +1,5 @@
 .card-list-container {
+  width: 890px;
   display: flex;
   flex-direction: column;
   align-items: center;

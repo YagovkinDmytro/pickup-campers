@@ -19,7 +19,7 @@ const VehicleType = () => {
   };
 
   return (
-    <div>
+    <div className={css.container}>
       <h3 className={css.title}>Vehicle Equipment</h3>
       <div className={css.line}></div>
       <ul className={css.list}>

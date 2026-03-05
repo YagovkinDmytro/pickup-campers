@@ -70,6 +70,7 @@
 .button-hart {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .button-hart-icon {
@@ -77,7 +78,12 @@
   stroke: #101828;
 }
 
-.button-hart-icon:hover {
+.button-hart:hover .button-hart-icon {
+  fill: #e44848;
+  stroke: #e44848;
+}
+
+.active .button-hart-icon {
   fill: #e44848;
   stroke: #e44848;
 }

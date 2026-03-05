@@ -6,11 +6,17 @@ const favoritesSlice = createSlice({
   name: 'favorites',
   initialState: favoritesState,
   reducers: {
-    addFavoriteCardId: (state, { payload }) => {
-      return { ...state, favoritesId: [...state.favoritesId, payload] };
+    toggleFavorites(state, { payload }) {
+      if (state.favoritesId.includes(payload)) {
+        state.favoritesId = state.favoritesId.filter(
+          favorite => favorite !== payload
+        );
+      } else {
+        state.favoritesId.push(payload);
+      }
     },
   },
 });
 
-export const { addFavoriteCardId } = favoritesSlice.actions;
+export const { toggleFavorites } = favoritesSlice.actions;
 export const favoritesReducer = favoritesSlice.reducer;

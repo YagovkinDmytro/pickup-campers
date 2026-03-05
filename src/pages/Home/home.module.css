@@ -1,5 +1,5 @@
 .home-container {
-  min-width: 100vw;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -7,7 +7,6 @@
   background-color: inherit;
   background-image: url(../../images/camper-home.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
   background-size: cover;
   background-position: center;
   overflow: hidden;

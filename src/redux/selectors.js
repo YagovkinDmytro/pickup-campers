@@ -16,7 +16,7 @@ export const selectCampersLimit = state => state.filters.limit;
 
 export const selectModalCardDetailsId = state => state.details.details.id;
 
-export const selectfavoritesIdArr = state => state.favorites.favoritesId;
+export const selectFavoritesIdArr = state => state.favorites.favoritesId;
 
 export const selectInfoCardCampers = createSelector(
   [selectCampers],
@@ -108,5 +108,13 @@ export const selectVisibleCampers = createSelector(
   (filtered, page, limit) => {
     const visible = filtered.slice(0, page * limit);
     return visible;
+  }
+);
+
+export const selectFavoritesCampers = createSelector(
+  [selectInfoCardCampers, selectFavoritesIdArr],
+  (campers, favoritesId) => {
+    const favoritesSet = new Set(favoritesId);
+    return campers.filter(camper => favoritesSet.has(camper._id));
   }
 );

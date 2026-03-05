@@ -1,18 +1,26 @@
 import { ReactComponent as Hart } from '../../images/icons/hart.svg';
 import { ReactComponent as Star } from '../../images/icons/star.svg';
 import { ReactComponent as Location } from '../../images/icons/map-pin.svg';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import CategoriesItemList from 'components/CategoriesItemList/CategoriesItemList';
 import ButtonCardItems from 'components/ButtonCardItems/ButtonCardItems';
 import css from './CardItem.module.css';
-import { addFavoriteCardId } from '../../redux/favoritesSlice';
+import { toggleFavorites } from '../../redux/favoritesSlice';
 import { Link } from 'react-router-dom';
+import { selectFavoritesIdArr } from '../../redux/selectors';
+import cn from 'utils/class-names';
 
 const CardItem = ({ campers }) => {
   const dispatch = useDispatch();
 
+  const selectedFavoritesIdArr = useSelector(selectFavoritesIdArr);
+
   const handleFavorite = id => {
-    dispatch(addFavoriteCardId(id));
+    dispatch(toggleFavorites(id));
+  };
+
+  const isActive = id => {
+    return selectedFavoritesIdArr.includes(id);
   };
 
   return campers.map(
@@ -50,7 +58,9 @@ const CardItem = ({ campers }) => {
                 <h2>€{price},00</h2>
                 <button
                   type="button"
-                  className={css['button-hart']}
+                  className={cn(css['button-hart'], {
+                    [css.active]: isActive(_id),
+                  })}
                   onClick={() => {
                     handleFavorite(_id);
                   }}

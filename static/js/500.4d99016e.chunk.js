@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkpickup_campers=self.webpackChunkpickup_campers||[]).push([[500],{500(e,s,c){c.r(s),c.d(s,{default:()=>a});var p=c(579);const a=()=>(0,p.jsx)("div",{children:"Favorites"})}}]);
-//# sourceMappingURL=500.4d99016e.chunk.js.map
